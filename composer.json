@@ -1,0 +1,28 @@
+{
+  "name": "nordsoftware/lumen-oauth2-doctrine",
+  "description": "Doctrine storage connector for the https://github.com/nordsoftware/lumen-oauth2 module.",
+  "keywords": [
+    "laravel",
+    "lumen",
+    "oauth2",
+    "doctrine"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.6",
+    "nordsoftware/lumen-oauth2": "^1.4"
+  },
+  "require-dev": {
+    "laravel/lumen-framework": "^5.3",
+    "codeception/codeception": "^2.2",
+    "codeception/specify": "^0.4",
+    "codeception/verify": "^0.3",
+    "satooshi/php-coveralls": "^1.0",
+    "nordsoftware/lumen-doctrine": "^2.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nord\\Lumen\\OAuth2\\Doctrine\\": "src"
+    }
+  }
+}
