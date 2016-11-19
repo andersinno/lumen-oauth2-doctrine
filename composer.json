@@ -10,7 +10,7 @@
   "license": "MIT",
   "require": {
     "php": ">=5.6",
-    "nordsoftware/lumen-oauth2": "^1.4"
+    "nordsoftware/lumen-oauth2": "^2.0"
   },
   "require-dev": {
     "laravel/lumen-framework": "^5.3",
