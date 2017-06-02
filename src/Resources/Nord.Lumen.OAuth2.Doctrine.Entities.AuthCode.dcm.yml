@@ -1,0 +1,26 @@
+Nord\Lumen\OAuth2\Doctrine\Entities\AuthCode:
+  type: entity
+  table: oauth_auth_codes
+  repositoryClass: Nord\Lumen\OAuth2\Doctrine\Repositories\AuthCodeRepository
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    authCode:
+      type: string
+      column: auth_code
+    expireTime:
+      type: datetime
+      column: expire_time
+    redirectUri:
+      type: string
+      column: client_redirect_uri
+  manyToOne:
+    session:
+      targetEntity: Nord\Lumen\OAuth2\Doctrine\Entities\Session
+      joinColumns:
+        session_id:
+          referenceColumnName: id
+          onDelete: CASCADE
