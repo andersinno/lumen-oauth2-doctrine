@@ -4,11 +4,13 @@ use Doctrine\ORM\EntityManagerInterface;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 use League\OAuth2\Server\Storage\AccessTokenInterface;
+use League\OAuth2\Server\Storage\AuthCodeInterface;
 use League\OAuth2\Server\Storage\ClientInterface;
 use League\OAuth2\Server\Storage\RefreshTokenInterface;
 use League\OAuth2\Server\Storage\ScopeInterface;
 use League\OAuth2\Server\Storage\SessionInterface;
 use Nord\Lumen\OAuth2\Doctrine\Storages\AccessTokenStorage;
+use Nord\Lumen\OAuth2\Doctrine\Storages\AuthCodeStorage;
 use Nord\Lumen\OAuth2\Doctrine\Storages\ClientStorage;
 use Nord\Lumen\OAuth2\Doctrine\Storages\RefreshTokenStorage;
 use Nord\Lumen\OAuth2\Doctrine\Storages\ScopeStorage;
@@ -27,7 +29,7 @@ class DoctrineServiceProvider extends ServiceProvider
 
 
     /**
-     *
+     * @param Container $container
      */
     protected function registerContainerBindings(Container $container)
     {
@@ -35,6 +37,10 @@ class DoctrineServiceProvider extends ServiceProvider
 
         $container->bind(AccessTokenStorage::class, function () use ($entityManager) {
             return new AccessTokenStorage($entityManager);
+        });
+
+        $container->bind(AuthCodeStorage::class, function () use ($entityManager) {
+            return new AuthCodeStorage($entityManager);
         });
 
         $container->bind(ClientStorage::class, function () use ($entityManager) {
@@ -54,6 +60,7 @@ class DoctrineServiceProvider extends ServiceProvider
         });
 
         $container->bind(AccessTokenInterface::class, AccessTokenStorage::class);
+        $container->bind(AuthCodeInterface::class, AuthCodeStorage::class);
         $container->bind(ClientInterface::class, ClientStorage::class);
         $container->bind(RefreshTokenInterface::class, RefreshTokenStorage::class);
         $container->bind(ScopeInterface::class, ScopeStorage::class);
