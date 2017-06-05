@@ -79,9 +79,7 @@ class SessionStorage extends DoctrineStorage implements SessionInterface
     {
         $client = $this->clientRepository->findByKey($clientId);
 
-        // TODO: support redirect URI
-        
-        $session = new Session($ownerType, $ownerId, $client);
+        $session = new Session($ownerType, $ownerId, $client, $clientRedirectUri);
 
         $this->entityManager->persist($session);
         $this->entityManager->flush($session);
