@@ -72,6 +72,14 @@ class Session extends Entity
     }
 
     /**
+     * @return Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
      * @return string
      */
     public function getClientRedirectUri()
