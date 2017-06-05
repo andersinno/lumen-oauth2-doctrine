@@ -25,6 +25,11 @@ NOTE: Always keep an Unreleased version at the top of this CHANGELOG for easy up
 ### Security
 - To invite users to upgrade in case of vulnerabilities.
 
+## [2.1.1] - 2017-06-05
+### Added
+- Support for clientRedirectUri in Session.
+- Support for getting the client from Session.
+
 ## [2.1.0] - 2017-06-02
 ### Added
 - Support for AuthCode Grant type.
@@ -42,7 +47,8 @@ NOTE: Always keep an Unreleased version at the top of this CHANGELOG for easy up
 ### Added
 - Project files.
 
-[Unreleased]: https://github.com/nordsoftware/lumen-oauth2-doctrine/compare/2.1.0...HEAD
+[Unreleased]: https://github.com/nordsoftware/lumen-oauth2-doctrine/compare/2.1.1...HEAD
+[2.1.1]: https://github.com/nordsoftware/lumen-oauth2-doctrine/compare/2.1.0...2.1.1
 [2.1.0]: https://github.com/nordsoftware/lumen-oauth2-doctrine/compare/2.0.0...2.1.0
 [2.0.0]: https://github.com/nordsoftware/lumen-oauth2-doctrine/compare/1.1.0...2.0.0
 [1.1.0]: https://github.com/nordsoftware/lumen-oauth2-doctrine/compare/1.0.0...1.1.0
